@@ -21,4 +21,23 @@ describe('mood reducer', () => {
       studies: 0
     });
   });
+ 
+  it('handles the EAT_SNACKS action', () => {
+    const state = {
+      coffees: 0,
+      snacks: 0,
+      naps: 0,
+      studies: 0
+    };
+    const action = eatSnack(1);
+
+    const newState = reducer(state, action);
+    
+    expect(newState).toEqual({
+      coffees: 0,
+      snacks: 1,
+      naps: 0,
+      studies: 0
+    });
+  });
 });
