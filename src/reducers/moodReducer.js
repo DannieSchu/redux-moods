@@ -11,6 +11,8 @@ export default function reducer(state = initialState, action) {
   switch(action.type) {
     case DRINK_COFFEE:
       return { ...state, coffees: action.payload };
+    case EAT_SNACK:
+      return { ...state, snacks: action.payload };
     default: {
       console.log(`unhandled type: ${action.type}`);
       return state;
