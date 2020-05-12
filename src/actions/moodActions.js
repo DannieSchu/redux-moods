@@ -4,3 +4,8 @@ export const drinkCoffee = coffees => ({
   payload: coffees
 });
 
+export const EAT_SNACK = 'EAT_SNACK';
+export const eatSnack = snacks => ({
+  type: EAT_SNACK,
+  payload: snacks
+});
