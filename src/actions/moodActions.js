@@ -9,3 +9,10 @@ export const eatSnack = snacks => ({
   type: EAT_SNACK,
   payload: snacks
 });
+
+export const TAKE_NAP = 'TAKE_NAP';
+export const takeNap = naps => ({
+  type: TAKE_NAP,
+  payload: naps
+});
+
