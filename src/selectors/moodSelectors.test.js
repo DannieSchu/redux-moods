@@ -39,4 +39,17 @@ describe('mood selectors', () => {
 
     expect(mood).toEqual('🤮');
   });
+ 
+  it('returns brain explosion if studied', () => {
+    const state = {
+      coffees: 2,
+      snacks: 0,
+      naps: 0,
+      studies: 3
+    };
+
+    const mood = getFace(state);
+
+    expect(mood).toEqual('🤯');
+  });
 });
