@@ -52,4 +52,17 @@ describe('mood selectors', () => {
 
     expect(mood).toEqual('🤯');
   });
+  
+  it('returns hangry face if underfed', () => {
+    const state = {
+      coffees: 2,
+      snacks: 0,
+      naps: 0,
+      studies: 2
+    };
+  
+    const mood = getFace(state);
+  
+    expect(mood).toEqual('😡');
+  });
 });
