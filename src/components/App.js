@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import Moods from './moods/Moods';
-import { Home } from './home/Home';
+import Home from './home/Home';
 
 export default function App() {
   return (
