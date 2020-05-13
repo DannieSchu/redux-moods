@@ -26,4 +26,17 @@ describe('mood selectors', () => {
 
     expect(mood).toEqual('🙀');
   });
+
+  it('returns vomit face if hungry and hyper', () => {
+    const state = {
+      coffees: 4,
+      snacks: 0,
+      naps: 0,
+      studies: 0
+    };
+
+    const mood = getFace(state);
+
+    expect(mood).toEqual('🤮');
+  });
 });
