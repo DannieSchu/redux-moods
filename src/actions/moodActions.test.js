@@ -1,11 +1,11 @@
-import { drinkCoffee, DRINK_COFFEE, eatSnack, EAT_SNACK, takeNap, TAKE_NAP, study, STUDY } from './moodActions';
+import { drinkCoffee, DRINK_COFFEE, eatSnack, EAT_SNACK, takeNap, TAKE_NAP, study, STUDY, RESET, reset } from './moodActions';
 
 describe('moods actions', () => {
   it('creates a DRINK_COFFEE action', () => {
     const action = drinkCoffee();
 
     expect(action).toEqual({
-      type: DRINK_COFFEE    
+      type: DRINK_COFFEE
     });
   });
 
@@ -30,6 +30,14 @@ describe('moods actions', () => {
 
     expect(action).toEqual({
       type: STUDY
+    });
+  });
+
+  it('creates a RESET action', () => {
+    const action = reset();
+
+    expect(action).toEqual({
+      type: RESET
     });
   });
 });

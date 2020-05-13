@@ -1,4 +1,4 @@
-import { drinkCoffee, eatSnack, takeNap, study } from '../actions/moodActions';
+import { drinkCoffee, eatSnack, takeNap, study, reset } from '../actions/moodActions';
 import reducer from './moodReducer';
 
 describe('mood reducer', () => {
@@ -10,7 +10,7 @@ describe('mood reducer', () => {
       studies: 0
     };
     
-    const action = drinkCoffee(1);
+    const action = drinkCoffee();
 
     const newState = reducer(state, action);
     
@@ -29,7 +29,7 @@ describe('mood reducer', () => {
       naps: 0,
       studies: 0
     };
-    const action = eatSnack(1);
+    const action = eatSnack();
 
     const newState = reducer(state, action);
     
@@ -48,7 +48,7 @@ describe('mood reducer', () => {
       naps: 0,
       studies: 0
     };
-    const action = takeNap(1);
+    const action = takeNap();
 
     const newState = reducer(state, action);
     
@@ -76,6 +76,25 @@ describe('mood reducer', () => {
       snacks: 0,
       naps: 0,
       studies: 1
+    });
+  });
+ 
+  it('handles the RESET action', () => {
+    const state = {
+      coffees: 6,
+      snacks: 2,
+      naps: 1,
+      studies: 1
+    };
+    const action = reset();
+
+    const newState = reducer(state, action);
+    
+    expect(newState).toEqual({
+      coffees: 0,
+      snacks: 0,
+      naps: 0,
+      studies: 0
     });
   });
 });
