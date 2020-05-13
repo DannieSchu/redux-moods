@@ -1,4 +1,4 @@
-import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP } from '../actions/moodActions';
+import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from '../actions/moodActions';
 
 const initialState = {    
   coffees: 0,
@@ -15,6 +15,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, snacks: action.payload };
     case TAKE_NAP:
       return { ...state, naps: action.payload };
+    case STUDY:
+      return { ...state, studies: action.payload };
     default: {
       console.log(`unhandled type: ${action.type}`);
       return state;
