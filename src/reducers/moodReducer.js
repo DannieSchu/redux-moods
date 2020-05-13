@@ -10,13 +10,13 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case DRINK_COFFEE:
-      return { ...state, coffees: action.payload };
+      return { ...state, coffees: action.payload + 1 };
     case EAT_SNACK:
-      return { ...state, snacks: action.payload };
+      return { ...state, snacks: action.payload + 1 };
     case TAKE_NAP:
-      return { ...state, naps: action.payload };
+      return { ...state, naps: action.payload + 1 };
     case STUDY:
-      return { ...state, studies: action.payload };
+      return { ...state, studies: action.payload + 1 };
     default: {
       console.log(`unhandled type: ${action.type}`);
       return state;
