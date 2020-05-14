@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import Controls from '../controls/Controls';
 import Face from '../face/Face';
@@ -6,16 +7,16 @@ import Timer from '../timer/Timer';
 import { getFace } from '../../selectors/moodSelectors';
 import { getCoffees, getSnacks, getNaps, getStudies } from '../../selectors/activitySelectors';
 import { drinkCoffee, eatSnack, takeNap, study } from '../../actions/moodActions';
-import { useTimer } from '../../hooks/useTimer';
+import { useTimer } from '../../hooks/timer';
 
-const Moods = () => {
+const Moods = ({ history }) => {
   const dispatch = useDispatch();
   const coffees = useSelector(getCoffees);
   const snacks = useSelector(getSnacks);
   const naps = useSelector(getNaps);
   const studies = useSelector(getStudies);
   const face = useSelector(getFace);
-  const time = useTimer();
+  const time = useTimer({ history });
 
   return (
     <>
@@ -29,6 +30,12 @@ const Moods = () => {
       <Timer time={time} />
     </>
   );
+};
+
+Moods.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default Moods;
