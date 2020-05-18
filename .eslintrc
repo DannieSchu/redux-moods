@@ -1,6 +1,6 @@
 {
   "parserOptions": {
-    "ecmaVersion": 10,
+    "ecmaVersion": 9,
     "sourceType": "module"
   },
   "parser": "babel-eslint",
